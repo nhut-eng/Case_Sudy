@@ -61,17 +61,38 @@ int main() {
     Doctor* listDoctors = nullptr;
     Patient* listPatients = nullptr;
 
-    // Khởi tạo bác sĩ
-    addDoctor(listDoctors, 1);
-    addDoctor(listDoctors, 2);
+    int nDoctor, nPatient;
 
-    // Khởi tạo bệnh nhân
-    addPatient(listPatients, 1, 0, 10);
-    addPatient(listPatients, 2, 2, 5);
-    addPatient(listPatients, 3, 5, 8);
-    addPatient(listPatients, 4, 12, 4);
+    // ===== NHẬP BÁC SĨ =====
+    cout << "Nhap so bac si: ";
+    cin >> nDoctor;
 
-    cout << "=== LICH KHAM BENH ===\n";
+    for (int i = 0; i < nDoctor; i++) {
+        int id;
+        cout << "Nhap ID bac si thu " << i + 1 << ": ";
+        cin >> id;
+        addDoctor(listDoctors, id);
+    }
+
+    // ===== NHẬP BỆNH NHÂN =====
+    cout << "\nNhap so benh nhan: ";
+    cin >> nPatient;
+
+    for (int i = 0; i < nPatient; i++) {
+        int id, arrival, duration;
+        cout << "\nBenh nhan thu " << i + 1 << endl;
+        cout << "  ID: ";
+        cin >> id;
+        cout << "  Thoi diem den: ";
+        cin >> arrival;
+        cout << "  Thoi gian kham: ";
+        cin >> duration;
+
+        addPatient(listPatients, id, arrival, duration);
+    }
+
+    // ===== XẾP LỊCH =====
+    cout << "\n=== LICH KHAM BENH ===\n";
 
     Patient* currP = listPatients;
     while (currP != nullptr) {
