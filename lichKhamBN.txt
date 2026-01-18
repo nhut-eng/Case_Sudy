@@ -1,0 +1,5 @@
+================ DANH SACH BENH NHAN DA TIEP NHAN ================
+HO TEN              KHOA           MUC DO         GIO DEN
+------------------------------------------------------------------
+D                   NOI            Khan cap       6h45
+H                   NGOAI          Thuong         7h00
